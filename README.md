@@ -32,7 +32,13 @@
 
 4. Скопируйте `.env.example` в `.env` и заполните реальные значения.
 5. Скопируйте `config/sources.example.yml` в `config/sources.yml` и настройте источники.
-6. Запустите бота:
+6. Проверьте настройки:
+
+   ```powershell
+   python -m mining_news_bot.diagnostics
+   ```
+
+7. Запустите бота:
 
    ```powershell
    python -m mining_news_bot.main
@@ -44,12 +50,13 @@
 - Добавить бота администратором в канал.
 - Узнать ID канала или использовать публичный username канала.
 - Написать боту от аккаунта модератора, чтобы он мог отправлять вам черновики.
+- Для `TELEGRAM_MODERATOR_CHAT_ID` нужен числовой ID личного чата или группы, а не username бота.
 
 ## Переменные в `.env`
 
 - `TELEGRAM_BOT_TOKEN`: токен бота из BotFather.
 - `TELEGRAM_CHANNEL_ID`: ID канала или username вида `@your_channel`.
-- `TELEGRAM_MODERATOR_CHAT_ID`: ID вашего личного чата с ботом или закрытой группы для модерации.
+- `TELEGRAM_MODERATOR_CHAT_ID`: числовой ID вашего личного чата с ботом или закрытой группы для модерации.
 - `OPENAI_API_KEY`: ключ OpenAI API для генерации текстов.
 - `DATABASE_PATH`: путь к SQLite-базе, например `bot.sqlite3`.
 - `SOURCES_PATH`: путь к файлу источников, обычно `config/sources.yml`.
