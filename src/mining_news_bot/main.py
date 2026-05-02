@@ -37,6 +37,8 @@ async def run() -> None:
             generator=generator,
             sources_path=settings.sources_path,
             moderator_chat_id=settings.telegram_moderator_chat_id,
+            max_drafts_per_run=settings.max_drafts_per_run,
+            max_drafts_per_source=settings.max_drafts_per_source,
         )
 
     scheduler = configure_scheduler(

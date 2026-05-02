@@ -15,6 +15,18 @@ def test_topic_filter_accepts_mining_news():
     assert is_mining_related(item) is True
 
 
+def test_topic_filter_accepts_quarry_news():
+    item = NewsItem(
+        title="Quarry operator adds new crushing equipment",
+        url="https://example.com/quarry",
+        source_name="Example",
+        published_at=None,
+        summary="The company upgraded equipment at an aggregates quarry.",
+    )
+
+    assert is_mining_related(item) is True
+
+
 def test_topic_filter_rejects_unrelated_news():
     item = NewsItem(
         title="Bank changes mortgage rates",

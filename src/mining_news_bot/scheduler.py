@@ -26,8 +26,14 @@ async def check_sources_once(
     generator: DraftGenerator,
     sources_path: str,
     moderator_chat_id: int,
+    max_drafts_per_run: int = 30,
+    max_drafts_per_source: int = 3,
 ) -> None:
+    created_count = 0
     for source in load_sources(sources_path):
+        if created_count >= max_drafts_per_run:
+            return
+        source_created_count = 0
         try:
             items = await collect_from_source(source)
         except Exception:
@@ -35,6 +41,10 @@ async def check_sources_once(
             continue
 
         for item in items:
+            if created_count >= max_drafts_per_run:
+                return
+            if source_created_count >= max_drafts_per_source:
+                break
             if database.has_processed_url(item.url):
                 continue
             if not is_mining_related(item):
@@ -42,6 +52,8 @@ async def check_sources_once(
             try:
                 draft_text = await generator.generate(item)
                 draft_id = database.create_draft(item, draft_text)
+                created_count += 1
+                source_created_count += 1
                 await send_draft_to_moderator(
                     application,
                     moderator_chat_id,
