@@ -1,8 +1,13 @@
+import logging
+
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
+from telegram.error import BadRequest
 from telegram.ext import Application, CallbackQueryHandler, ContextTypes
 
 from mining_news_bot.database import Database
 from mining_news_bot.settings import Settings
+
+logger = logging.getLogger(__name__)
 
 
 def build_moderation_keyboard(draft_id: int) -> InlineKeyboardMarkup:
@@ -35,7 +40,10 @@ def build_callback_handler(settings: Settings, database: Database) -> CallbackQu
         query = update.callback_query
         if query is None or query.data is None:
             return
-        await query.answer()
+        try:
+            await query.answer()
+        except BadRequest:
+            logger.warning("Callback query was too old to answer; continuing with action")
         action, raw_draft_id = query.data.split(":", 1)
         draft_id = int(raw_draft_id)
         draft = database.get_draft(draft_id)
