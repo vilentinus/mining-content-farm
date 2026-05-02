@@ -1,5 +1,6 @@
 .worktrees/
 .env
+config/sources.yml
 .venv/
 __pycache__/
 .pytest_cache/
