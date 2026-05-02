@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Example</title>
+    <item>
+      <title>New copper mine opens</title>
+      <link>https://example.com/copper</link>
+      <pubDate>Sat, 02 May 2026 09:00:00 +0300</pubDate>
+      <description>A company opened a copper mining project.</description>
+    </item>
+  </channel>
+</rss>

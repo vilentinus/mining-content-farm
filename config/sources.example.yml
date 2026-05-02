@@ -1,0 +1,79 @@
+sources:
+  - name: The Northern Miner
+    url: https://www.northernminer.com/feed/
+    type: rss
+    enabled: true
+    region: world
+    category: industry
+  - name: Canadian Mining Journal
+    url: https://www.canadianminingjournal.com/feed/
+    type: rss
+    enabled: true
+    region: canada
+    category: industry
+  - name: International Mining
+    url: https://im-mining.com/feed/
+    type: rss
+    enabled: true
+    region: world
+    category: equipment
+  - name: Canadian Mining Magazine
+    url: https://canadianminingmagazine.com/feed/
+    type: rss
+    enabled: true
+    region: canada
+    category: industry
+  - name: Pit & Quarry
+    url: https://pitandquarry.com/feed/
+    type: rss
+    enabled: true
+    region: usa
+    category: quarry
+  - name: Australian Mining Review
+    url: https://australianminingreview.com.au/feed/
+    type: rss
+    enabled: true
+    region: australia
+    category: industry
+  - name: MiningFeeds
+    url: https://www.miningfeeds.com/feed/
+    type: rss
+    enabled: true
+    region: world
+    category: markets
+  - name: Republic of Mining
+    url: https://republicofmining.com/feed/
+    type: rss
+    enabled: true
+    region: world
+    category: industry
+  - name: Copperbelt Katanga Mining
+    url: https://copperbeltkatangamining.com/feed/
+    type: rss
+    enabled: true
+    region: africa
+    category: copper-cobalt
+  - name: Engineering & Mining Journal
+    url: https://www.e-mj.com/feed/
+    type: rss
+    enabled: true
+    region: world
+    category: engineering
+  - name: Mining North
+    url: https://www.miningnorth.com/_rss/chamber-news
+    type: rss
+    enabled: true
+    region: canada
+    category: industry
+  - name: NEDRADV
+    url: https://nedradv.ru/nedradv/ru/rss
+    type: rss
+    enabled: true
+    region: russia
+    category: industry
+  - name: Prime Gold
+    url: https://gold.1prime.ru/export/rss2/index.xml
+    type: rss
+    enabled: true
+    region: russia
+    category: gold
